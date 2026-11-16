@@ -1,0 +1,48 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	height: 100%;
+}
+.container{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.glava{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 100px;
+	background-color: #cccccc;
+}
+.gumb{
+	font-size: 40px;
+	font-weight: bold;
+	align-content: center;
+	background-color: #55aaff;
+	padding: 5px 15px;
+	border-radius: 30px;
+}
+.telo{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #eeeeee;
+}
+.naslov{
+	padding: 30px;
+	font-size: 40px;
+	font-weight: bold;
+}
+.noga{
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 100px;
+	background-color: #cccccc;
+}

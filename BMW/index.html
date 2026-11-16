@@ -1,0 +1,135 @@
+<!DOCTYPE html5>
+<html>
+	<head>
+		<title>BMW</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<header class="glava">
+				<div class="gumb">SVG</div>
+				<div class="gumb">BEZIER</div>
+				<div class="gumb">PNG</div>
+			</header>
+			<div class="telo">
+				<div class="naslov">SVG</div>
+				<div>
+					<svg height="500" width="500">
+					  <circle cx="250" cy="250" r="200" stroke="gray" stroke-width="10" fill="none"/>
+					  <circle cx="250" cy="250" r="190" stroke="black" stroke-width="10" fill="black"/>
+					  <circle cx="250" cy="250" r="120" stroke="gray" stroke-width="2" fill="white"/>
+					  <path
+						d="M 250 250 L 370 250 A 120 120 0 0 1 250 370 Z"
+						fill="#4599fe"
+					  />
+					  <path
+						d="M 250 250 L 370 250 A 120 120 0 0 1 250 370 Z"
+						fill="#4599fe"
+						transform="translate(500, 500) scale(-1, -1)"
+					  />
+					  <line x1=250 y1=125 x2=250 y2=375 style="stroke:black;stroke-width:5"/>
+					  <line x1=125 y1=250 x2=375 y2=250 style="stroke:black;stroke-width:5"/>
+					  <circle cx="250" cy="250" r="120" stroke="gray" stroke-width="2" fill="none"/>
+					  <text x="225.5" y="115" font-size="60" fill="white" font-weight="bold" transform="rotate(45 250 250)" font-family="arial">W</text>
+					  <text x="225.5" y="115" font-size="60" fill="white" font-weight="bold" transform="rotate(0 250 250)" font-family="arial">M</text>
+					  <text x="225.5" y="115" font-size="60" fill="white" font-weight="bold" transform="rotate(-45 250 250)" font-family="arial">B</text>
+					</svg>
+				</div>
+				<div class="naslov">BEZIER</div>
+				<div>
+					<canvas id="myCanvas" width="500" height="500"></canvas>
+					<script>
+						const canvas = document.getElementById("myCanvas");
+						const ctx = canvas.getContext("2d");
+
+						// Zunanji krog
+						ctx.beginPath();
+						ctx.arc(250, 250, 195, 0, Math.PI * 2);
+						ctx.strokeStyle = "gray";
+						ctx.lineWidth = 10;
+						ctx.stroke();
+
+						// Črn krog
+						ctx.beginPath();
+						ctx.arc(250, 250, 190, 0, Math.PI * 2);
+						ctx.fillStyle = "black";
+						ctx.fill();
+
+						// Notranji krog
+						ctx.beginPath();
+						ctx.arc(250, 250, 120, 0, Math.PI * 2);
+						ctx.fillStyle = "white";
+						ctx.fill();
+
+						// Bezierjeva četrtina kroga
+						ctx.beginPath();
+						ctx.moveTo(250, 250);
+						ctx.lineTo(371, 250);
+						ctx.quadraticCurveTo(359, 359, 250, 371);
+						ctx.closePath();
+						ctx.fillStyle = "#4599fe";
+						ctx.fill();
+
+						// Nasprotna četrtina
+						ctx.beginPath();
+						ctx.moveTo(250, 250);
+						ctx.lineTo(129, 250);
+						ctx.quadraticCurveTo(139, 139, 250, 129);
+						ctx.closePath();
+						ctx.fillStyle = "#4599fe";
+						ctx.fill();
+
+						// Sredinske črte
+						ctx.beginPath();
+						ctx.moveTo(250, 125);
+						ctx.lineTo(250, 375);
+						ctx.moveTo(125, 250);
+						ctx.lineTo(375, 250);
+						ctx.strokeStyle = "black";
+						ctx.lineWidth = 5;
+						ctx.stroke();
+
+						// Notranja obroba
+						ctx.beginPath();
+						ctx.arc(250, 250, 120, 0, Math.PI * 2);
+						ctx.strokeStyle = "gray";
+						ctx.lineWidth = 2;
+						ctx.stroke();
+
+						// Črka W
+						ctx.save();
+						ctx.translate(250, 250);
+						ctx.rotate(Math.PI / 4);
+						ctx.fillStyle = "white";
+						ctx.font = "bold 60px Arial";
+						ctx.fillText("W", -24.5, -135);
+						ctx.restore();
+
+						// Črka M
+						ctx.fillStyle = "white";
+						ctx.font = "bold 60px Arial";
+						ctx.fillText("M", 225.5, 115);
+
+						// Črka B
+						ctx.save();
+						ctx.translate(250, 250);
+						ctx.rotate(-Math.PI / 4);
+						ctx.fillStyle = "white";
+						ctx.font = "bold 60px Arial";
+						ctx.fillText("B", -24.5, -135);
+						ctx.restore();
+
+					</script>
+				</div>
+				<div class="naslov">PNG</div>
+				<div>
+					<img src="slike/BMW_logo.png"></img>
+				</div>
+			</div>
+			<footer class="noga">
+			
+			</footer>
+		</div>	
+	</body>
+</html>
